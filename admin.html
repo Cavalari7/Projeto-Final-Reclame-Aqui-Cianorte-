@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel do Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Painel do Administrador</h1>
+    <a id="logout-btn">Sair</a>
+  </header>
+
+  <main>
+    <h2>Denúncias</h2>
+    <div id="admin-denuncias"></div>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module">
+    import { listarDenuncias, removerDenuncia } from "./js/denuncias-config.js";
+
+    const container = document.getElementById("admin-denuncias");
+
+    async function carregarAdmin() {
+      container.innerHTML = "";
+      const denuncias = await listarDenuncias();
+      denuncias.forEach((d) => {
+        const div = document.createElement("div");
+        div.classList.add("denuncia-card");
+        div.innerHTML = `
+          <h3>${d.titulo}</h3>
+          <p>${d.descricao}</p>
+          <button data-id="${d.id}" class="remover">Remover</button>
+        `;
+        container.appendChild(div);
+      });
+
+      document.querySelectorAll(".remover").forEach((btn) => {
+        btn.addEventListener("click", async () => {
+          await removerDenuncia(btn.dataset.id);
+          carregarAdmin();
+        });
+      });
+    }
+
+    carregarAdmin();
+  </script>
+</body>
+</html>
