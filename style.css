@@ -1,0 +1,166 @@
+/* ===== Reset básico ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #0077cc;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+header nav a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+header nav a:hover {
+  color: #ffdd59;
+}
+
+/* ===== Main ===== */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* ===== Forms ===== */
+form {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+form input, form textarea, form button {
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #0077cc;
+}
+
+form button {
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #005fa3;
+}
+
+/* ===== Denúncias ===== */
+.denuncia-card {
+  background-color: #fff;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.denuncia-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.denuncia-card h3 {
+  color: #0077cc;
+  margin-bottom: 0.5rem;
+}
+
+.denuncia-card p {
+  margin-bottom: 0.5rem;
+}
+
+.denuncia-card small {
+  color: #555;
+}
+
+/* ===== Comentários ===== */
+.comments {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid #0077cc;
+}
+
+.comments p {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+/* ===== Botões de remover (admin) ===== */
+.remover {
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.remover:hover {
+  background-color: #c0392b;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  header nav {
+    margin-top: 0.5rem;
+  }
+  
+  main {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  form input, form textarea, form button {
+    font-size: 0.95rem;
+  }
+
+  .denuncia-card h3 {
+    font-size: 1.1rem;
+  }
+}
