@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel do Admin</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Painel do Administrador</h1>
+    <a id="logout-btn" style="display:none;">Sair</a>
+  </header>
+
+  <main>
+    <!-- Resumo -->
+    <section class="dashboard-stats">
+      <div>Total de denúncias: <span id="total-denuncias">0</span></div>
+      <div>Novas denúncias: <span id="novas-denuncias">0</span></div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="dashboard-filters">
+      <input type="text" id="filter-author" placeholder="Filtrar por autor...">
+      <input type="date" id="filter-date">
+      <button id="apply-filter">Aplicar filtro</button>
+      <button id="clear-filter">Limpar filtro</button>
+    </section>
+
+    <!-- Gráficos -->
+    <section class="dashboard-charts">
+      <canvas id="bar-chart" width="400" height="200"></canvas>
+      <canvas id="pie-chart" width="400" height="200"></canvas>
+    </section>
+
+    <!-- Lista de denúncias -->
+    <section>
+      <h2>Denúncias</h2>
+      <div id="admin-denuncias" class="admin-container"></div>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>
